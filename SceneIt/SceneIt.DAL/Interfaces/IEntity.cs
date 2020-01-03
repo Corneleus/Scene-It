@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace SceneIt.DAL.Interfaces
 {
-    interface IEntity
+    public interface IEntity
     {
+        int GetPrimaryKey();
     }
 }

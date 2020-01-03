@@ -1,12 +1,13 @@
 namespace SceneIt.DAL.Entities
 {
+    using SceneIt.DAL.Infrastructure;
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class User
+    public partial class User : BaseEntity
     {        
         public User()
         {
@@ -20,5 +21,10 @@ namespace SceneIt.DAL.Entities
         public string Name { get; set; }
                 
         public virtual ICollection<UserMedia> UserMedia { get; set; }
+
+        public override int GetPrimaryKey()
+        {
+            return UserId;
+        }
     }
 }

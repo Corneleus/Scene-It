@@ -7,8 +7,13 @@ using System.Threading.Tasks;
 
 namespace SceneIt.DAL.Infrastructure
 {
-    public class BaseEntity : IEntity
+    public abstract class BaseEntity : IEntity
     {
+        protected BaseEntity()
+        {
 
+        }
+
+        public abstract int GetPrimaryKey();
     }
 }
