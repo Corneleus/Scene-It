@@ -18,6 +18,17 @@ namespace SceneIt.DAL
         public virtual DbSet<UserMedia> UserMedia { get; set; }
         public virtual DbSet<User> Users { get; set; }
 
+        public virtual void SetModified(object entitiy, object updatedEntity)
+        {
+            this.Entry(entitiy).CurrentValues.SetValues(updatedEntity);
+            this.Entry(entitiy).State = EntityState.Modified;
+        }
+
+        public virtual void SetDeleted(object entitiy)
+        {
+            this.Entry(entitiy).State = EntityState.Deleted;
+        }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Configurations.Add(new MediaConfiguration());

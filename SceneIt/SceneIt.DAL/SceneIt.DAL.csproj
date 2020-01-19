@@ -56,6 +56,8 @@
     <Compile Include="Entities\Media.cs" />
     <Compile Include="Infrastructure\BaseEntity.cs" />
     <Compile Include="Infrastructure\BaseRepository.cs" />
+    <Compile Include="Infrastructure\DatabaseFactory.cs" />
+    <Compile Include="Interfaces\IDatabaseFactory.cs" />
     <Compile Include="Interfaces\IEntity.cs" />
     <Compile Include="Interfaces\IMediaRepository.cs" />
     <Compile Include="Interfaces\IRepository.cs" />
