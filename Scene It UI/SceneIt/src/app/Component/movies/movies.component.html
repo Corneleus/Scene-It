@@ -1,1 +1,2 @@
-<p>movies works!</p>
+<button class="btn btn-primary" (click)="showCreateForm = !showCreateForm" >Add Movie</button>
+<app-add-movie *ngIf="showCreateForm"></app-add-movie>

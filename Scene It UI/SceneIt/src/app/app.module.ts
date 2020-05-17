@@ -7,9 +7,9 @@ import { HomeComponent } from './Component/home/home.component';
 import { HeaderComponent } from './Common/header/header.component';
 import { FooterComponent } from './Common/footer/footer.component';
 import { MoviesComponent } from './Component/movies/movies.component';
-import { MovieDetailsComponent } from './Component/Movies/movie-details/movie-details.component';
-import { AddMovieComponent } from './Component/Movies/add-movie/add-movie.component';
-import { EditMovieComponent } from './Component/Movies/edit-movie/edit-movie.component';
+import { MovieDetailsComponent } from './Component/movies/movie-details/movie-details.component';
+import { AddMovieComponent } from './Component/movies/add-movie/add-movie.component';
+import { EditMovieComponent } from './Component/movies/edit-movie/edit-movie.component';
 import { DeleteComponent } from './Common/delete/delete.component';
 
 @NgModule({
