@@ -84,9 +84,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\MediaController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Controllers\UserMediaController.cs" />
     <Compile Include="Interfaces\IMediaService.cs" />
+    <Compile Include="Interfaces\IUserMediaService.cs" />
+    <Compile Include="Interfaces\IUserService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\MediaService.cs" />
+    <Compile Include="Services\UserMediaService.cs" />
+    <Compile Include="Services\UserService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
