@@ -11,6 +11,7 @@ import { MovieDetailsComponent } from './Component/movies/movie-details/movie-de
 import { AddMovieComponent } from './Component/movies/add-movie/add-movie.component';
 import { EditMovieComponent } from './Component/movies/edit-movie/edit-movie.component';
 import { DeleteComponent } from './Common/delete/delete.component';
+import { TableComponent } from './Common/table/table.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { DeleteComponent } from './Common/delete/delete.component';
     MovieDetailsComponent,
     AddMovieComponent,
     EditMovieComponent,
-    DeleteComponent
+    DeleteComponent,
+    TableComponent
   ],
   imports: [
     BrowserModule,
