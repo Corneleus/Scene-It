@@ -12,6 +12,10 @@ import { AddMovieComponent } from './Component/movies/add-movie/add-movie.compon
 import { EditMovieComponent } from './Component/movies/edit-movie/edit-movie.component';
 import { DeleteComponent } from './Common/delete/delete.component';
 import { TableComponent } from './Common/table/table.component';
+import { MovieTableComponent } from './Component/movies/movie-table/movie-table.component';
+import { ComicsComponent } from './Component/comics/comics.component';
+import { NovelsComponent } from './Component/novels/novels.component';
+import { SeriesComponent } from './Component/series/series.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +28,11 @@ import { TableComponent } from './Common/table/table.component';
     AddMovieComponent,
     EditMovieComponent,
     DeleteComponent,
-    TableComponent
+    TableComponent,
+    MovieTableComponent,
+    ComicsComponent,
+    NovelsComponent,
+    SeriesComponent
   ],
   imports: [
     BrowserModule,
