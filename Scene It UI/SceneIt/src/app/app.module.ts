@@ -16,6 +16,7 @@ import { MovieTableComponent } from './Component/movies/movie-table/movie-table.
 import { ComicsComponent } from './Component/comics/comics.component';
 import { NovelsComponent } from './Component/novels/novels.component';
 import { SeriesComponent } from './Component/series/series.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { SeriesComponent } from './Component/series/series.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

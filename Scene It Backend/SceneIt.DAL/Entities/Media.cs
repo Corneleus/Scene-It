@@ -5,7 +5,6 @@ namespace SceneIt.DAL.Entities
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
-    using System.Data.Entity.Spatial;
     // todo , seperate the types of media into its own entity and table in the database IE Movies, Episodic Media, 
     public partial class Media: BaseEntity
     {        

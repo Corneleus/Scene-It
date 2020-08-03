@@ -1,9 +1,6 @@
 namespace SceneIt.DAL
 {
-    using System;
     using System.Data.Entity;
-    using System.ComponentModel.DataAnnotations.Schema;
-    using System.Linq;
     using SceneIt.DAL.Entities;
     using SceneIt.DAL.Configurations;
 

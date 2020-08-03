@@ -3,10 +3,8 @@ using SceneIt.DAL.Entities;
 using SceneIt.DAL.Infrastructure;
 using SceneIt.DAL.Interfaces;
 using SceneIt.DAL.Repositories;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 
 namespace SceneIt.API.Services
 {

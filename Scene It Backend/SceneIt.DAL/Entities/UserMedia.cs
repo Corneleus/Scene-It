@@ -1,11 +1,8 @@
 namespace SceneIt.DAL.Entities
 {
     using SceneIt.DAL.Infrastructure;
-    using System;
-    using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
-    using System.Data.Entity.Spatial;
 
     [Table("UserMedia")]
     public partial class UserMedia : BaseEntity

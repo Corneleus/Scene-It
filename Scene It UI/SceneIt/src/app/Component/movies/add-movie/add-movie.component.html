@@ -1,8 +1,24 @@
-<form action="">
-    <div>
-        <label for=""></label>
-        <input type="text" name="" id="">
+<button class="btn btn-lg btn-outline-primary" (click)="open(addMovie)">Add Movie</button>
+
+<ng-template #addMovie let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-add-movie-title">Add Movie</h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
     </div>
-    <header>This should also at somepoint have a list you can check to add movies that are already in the DB for faster cataloging may be its own component</header>
-    <button type="submit" class="btn btn-success">submit</button>
-</form>
+    <div class="modal-body">
+        <form action="">
+            <div class="input-group">               
+                <input type="text" class="form-control" name="" placeholder="Enter Movie to search for..." >
+                <div class="input-group-append">
+                    <button type="button" class="btn btn-success">Search</button>
+                </div>               
+            </div>
+            <header>This should also at somepoint have a list you can check to add movies that are already in the DB for faster cataloging may be its own component</header>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
+    </div>
+</ng-template>
