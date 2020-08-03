@@ -1,4 +1,4 @@
-<button class="btn btn-lg btn-outline-primary" (click)="open(addMovie)">Add Movie</button>
+<!-- <button class="btn btn-lg btn-outline-primary" (click)="open(addMovie)">Add Movie</button> -->
 
 <ng-template #addMovie let-modal>
     <div class="modal-header">
@@ -8,17 +8,41 @@
         </button>
     </div>
     <div class="modal-body">
-        <form action="">
-            <div class="input-group">               
-                <input type="text" class="form-control" name="" placeholder="Enter Movie to search for..." >
+        <div class="row">
+            <div class="input-group">
+                <input type="text" class="form-control" name="" placeholder="Enter Movie to search for...">
                 <div class="input-group-append">
                     <button type="button" class="btn btn-success">Search</button>
-                </div>               
+                </div>
             </div>
-            <header>This should also at somepoint have a list you can check to add movies that are already in the DB for faster cataloging may be its own component</header>
-        </form>
+        </div>    
+        <div class="row">
+            <table class="table table-dark">
+                <thead>
+                    <tr>
+                        <th>Poster:</th>
+                        <th>Title:</th>
+                        <th>Genre:</th>
+                        <th>Year:</th>
+                        <th>Rated:</th>
+                    </tr>
+                </thead>
+                <!-- <tbody>
+                    <tr *ngFor="let movie of movies" (click)="selectMovie(movie)" >
+                      <td>{{movie.Poster}}</td>
+                      <td>{{movie.Title}}</td>
+                      <td>{{movie.Genre}}</td>
+                      <td>{{movie.Year}}</td>
+                      <td>{{movie.Rated}}</td>
+                     </tr>
+                  </tbody> -->
+            </table>
+        </div>
+        <header>This should also at somepoint have a list you can check to add movies that are already in the DB for
+            faster cataloging may be its own component</header>
+
     </div>
-    <div class="modal-footer">
-        <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
-    </div>
+    <!-- <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark" (click)="addMovie()">Save</button>
+    </div> -->
 </ng-template>

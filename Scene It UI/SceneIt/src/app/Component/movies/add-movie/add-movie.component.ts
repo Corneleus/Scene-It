@@ -7,6 +7,7 @@ import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
   styleUrls: ['./add-movie.component.scss']
 })
 export class AddMovieComponent implements OnInit {
+  selectedMovie:any;
   closeResult = '';
 
   constructor(private modalService: NgbModal) {}
@@ -21,6 +22,19 @@ export class AddMovieComponent implements OnInit {
       this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
     });
   }
+
+  selectMovie(movie:any) {
+     this.selectedMovie=movie;
+  }
+
+   addMovie() {
+  //   this.movieService.addMovie(this.selectedMovie).subscribe(data => {
+  //     this.modalService.dismissAll();  
+  //   }, error => {
+  //     this.modalService.dismissAll();
+  //   });
+   }
+
 
   private getDismissReason(reason: any): string {
     if (reason === ModalDismissReasons.ESC) {
