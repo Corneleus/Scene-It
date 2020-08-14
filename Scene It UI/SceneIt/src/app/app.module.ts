@@ -17,6 +17,9 @@ import { ComicsComponent } from './Component/comics/comics.component';
 import { NovelsComponent } from './Component/novels/novels.component';
 import { SeriesComponent } from './Component/series/series.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { MovieService } from './services/movie.service';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -38,9 +41,11 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    FormsModule,
+    NgbModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [MovieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

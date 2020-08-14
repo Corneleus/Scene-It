@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
+import { MovieService } from 'src/app/services/movie.service';
+import { Movie } from 'src/app/models/movie';
 
 @Component({
   selector: 'app-add-movie',
@@ -7,34 +9,50 @@ import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
   styleUrls: ['./add-movie.component.scss']
 })
 export class AddMovieComponent implements OnInit {
-  selectedMovie:any;
+  movies: Movie[] = [];
+  selectedMovie: Movie;
+  searchString: string;
   closeResult = '';
 
-  constructor(private modalService: NgbModal) {}
-  
+  constructor(private modalService: NgbModal, private movieService: MovieService) { }
+
   ngOnInit(): void {
-  } 
+  }
 
   open(content) {
-    this.modalService.open(content, {ariaLabelledBy: 'modal-add-movie-title', size: 'xl', scrollable: true}).result.then((result) => {
+    this.modalService.open(content, { ariaLabelledBy: 'modal-add-movie-title', size: 'xl', scrollable: true }).result.then((result) => {
       this.closeResult = `Closed with: ${result}`;
     }, (reason) => {
       this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
     });
   }
 
-  selectMovie(movie:any) {
-     this.selectedMovie=movie;
+  selectMovie(movie: any) {
+    this.selectedMovie = movie;
   }
 
-   addMovie() {
-  //   this.movieService.addMovie(this.selectedMovie).subscribe(data => {
-  //     this.modalService.dismissAll();  
-  //   }, error => {
-  //     this.modalService.dismissAll();
-  //   });
-   }
+  addMovie() {
+    this.movieService.getOmdbMovieById(this.selectedMovie.ImdbId).subscribe(movie => {
+      this.movieService.addMovie(movie).subscribe(data => {
+        if (data.length > 0) {
+          this.modalService.dismissAll();
+        }
+      }, error => {
+        console.log(error);
+      });
+    }, error => {
+      console.log(error);
+    });
 
+  }
+
+  searchOmdb(search: string): void {
+    this.movieService.searchOmdbApi(search).subscribe(data => {
+      this.movies = data;
+    }, error => {
+      console.log(error);
+    });
+  }
 
   private getDismissReason(reason: any): string {
     if (reason === ModalDismissReasons.ESC) {
