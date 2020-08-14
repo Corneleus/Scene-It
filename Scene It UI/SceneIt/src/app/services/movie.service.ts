@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Movie } from '../models/movie';
 import { Observable, ObservableLike } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { environment } from 'src/environments/environment';
 
 
 @Injectable({
@@ -16,11 +17,11 @@ export class MovieService {
   constructor(private http: HttpClient) {}
 
   getMovies(): Observable<Movie[]> {
-    return this.http.get(`/api/movies`).pipe(map(x => x as Movie[]));
+    return this.http.get(`${environment.api}api/movies`).pipe(map(x => x as Movie[]));
   }
   // this is the same as the getmovies however dosnt require use of the pipe method called type transformation
   addMovie(movie: Movie): Observable<string> {
-    return this.http.post<string>(`/api/movies/add`, movie);
+    return this.http.post<string>(`${environment.api}api/movies/add`, movie);
   }
 
   searchOmdbApi(query: string): Observable<Movie[]> {
