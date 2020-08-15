@@ -6,6 +6,7 @@ import { TableComponent } from './Common/table/table.component';
 import { ComicsComponent } from './Component/comics/comics.component';
 import { NovelsComponent } from './Component/novels/novels.component';
 import { SeriesComponent } from './Component/series/series.component';
+import { GamesComponent } from './Component/games/games.component';
  
 
 
@@ -16,7 +17,8 @@ const routes: Routes = [
   { path: 'novels', component: NovelsComponent },
   { path: 'series', component: SeriesComponent },
   { path: '', component: HomeComponent, pathMatch: 'full' },
-  { path: 'table', component: TableComponent}
+  { path: 'table', component: TableComponent},
+  { path: 'games', component: GamesComponent }
 ];
 
 @NgModule({

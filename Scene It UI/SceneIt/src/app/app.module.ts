@@ -20,6 +20,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MovieService } from './services/movie.service';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { GamesComponent } from './Component/games/games.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { HttpClientModule } from '@angular/common/http';
     MovieTableComponent,
     ComicsComponent,
     NovelsComponent,
-    SeriesComponent
+    SeriesComponent,
+    GamesComponent
   ],
   imports: [
     BrowserModule,
