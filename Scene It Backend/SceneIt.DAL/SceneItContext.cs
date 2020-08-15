@@ -11,8 +11,8 @@ namespace SceneIt.DAL
         {
         }
 
-        public virtual DbSet<Media> Media { get; set; }
-        public virtual DbSet<UserMedia> UserMedia { get; set; }
+        public virtual DbSet<Movies> Movies { get; set; }
+        public virtual DbSet<UserMovies> UserMovies { get; set; }
         public virtual DbSet<User> Users { get; set; }
 
         public virtual void SetModified(object entitiy, object updatedEntity)
@@ -28,9 +28,9 @@ namespace SceneIt.DAL
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Configurations.Add(new MediaConfiguration());
+            modelBuilder.Configurations.Add(new MoviesConfiguration());
             modelBuilder.Configurations.Add(new UserConfiguration());
-            modelBuilder.Configurations.Add(new UserMediaConfiguration());
+            modelBuilder.Configurations.Add(new UserMoviesConfiguration());
         }
 
     }

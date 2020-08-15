@@ -5,16 +5,16 @@ namespace SceneIt.DAL.Entities
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
-    // todo , seperate the types of media into its own entity and table in the database IE Movies, Episodic Media, 
-    public partial class Media: BaseEntity
+    // todo , seperate the types of movies into its own entity and table in the database IE Movies, Episodic Movies, 
+    public partial class Movies: BaseEntity
     {        
-        public Media()
+        public Movies()
         {
-            UserMedia = new HashSet<UserMedia>();
+            UserMovies = new HashSet<UserMovies>();
         }
 
         [Key]
-        public int MediaId { get; set; }
+        public int MovieId { get; set; }
 
         [Required]
         [StringLength(255)]
@@ -103,11 +103,11 @@ namespace SceneIt.DAL.Entities
         [StringLength(255)]
         public string Production { get; set; }
 
-        public virtual ICollection<UserMedia> UserMedia { get; set; }
+        public virtual ICollection<UserMovies> UserMovies { get; set; }
 
         public override int GetPrimaryKey()
         {
-            return MediaId;
+            return MovieId;
         }
     }
 }

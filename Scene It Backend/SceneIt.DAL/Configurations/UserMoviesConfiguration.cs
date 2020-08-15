@@ -3,7 +3,7 @@ using System.Data.Entity.ModelConfiguration;
 
 namespace SceneIt.DAL.Configurations
 {
-    public class UserMediaConfiguration : EntityTypeConfiguration<UserMedia>
+    public class UserMoviesConfiguration : EntityTypeConfiguration<UserMovies>
     {
     }
 }

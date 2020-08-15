@@ -6,42 +6,42 @@ using System.Collections.Generic;
 using System.Web.Http;
 namespace SceneIt.API.Controllers
 {
-    [RoutePrefix("api/usermedia")]
-    public class UserMediaController : ApiController
+    [RoutePrefix("api/usermovies")]
+    public class UserMoviesController : ApiController
     {
-        private readonly IUserMediaService userMediaService;
+        private readonly IUserMoviesService userMoviesService;
 
-        public UserMediaController()
+        public UserMoviesController()
         {
-            this.userMediaService = new UserMediaService();
+            this.userMoviesService = new UserMoviesService();
         }
 
         [Route("")]
         [HttpGet]
-        public List<UserMedia> GetAll()
+        public List<UserMovies> GetAll()
         {
             try
             {
-                return this.userMediaService.GetAll();
+                return this.userMoviesService.GetAll();
             }
             catch (Exception)
             {
 
-                return new List<UserMedia>();
+                return new List<UserMovies>();
             }
         }
 
         [Route("/(id:int)")]
         [HttpGet]
-        public UserMedia Get(int id)
+        public UserMovies Get(int id)
         {
             try
             {
-                return this.userMediaService.Get(id);
+                return this.userMoviesService.Get(id);
             }
             catch (Exception)
             {
-                return default(UserMedia);
+                return default(UserMovies);
             }
 
         }

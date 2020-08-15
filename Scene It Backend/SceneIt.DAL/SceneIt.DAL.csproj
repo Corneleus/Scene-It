@@ -50,10 +50,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Configurations\MediaConfiguration.cs" />
+    <Compile Include="Configurations\MoviesConfiguration.cs" />
     <Compile Include="Configurations\UserConfiguration.cs" />
-    <Compile Include="Configurations\UserMediaConfiguration.cs" />
-    <Compile Include="Entities\Media.cs" />
+    <Compile Include="Configurations\UserMoviesConfiguration.cs" />
+    <Compile Include="Entities\Movies.cs" />
     <Compile Include="Infrastructure\BaseEntity.cs" />
     <Compile Include="Infrastructure\BaseRepository.cs" />
     <Compile Include="Infrastructure\DatabaseFactory.cs" />
@@ -64,12 +64,12 @@
     <Compile Include="Interfaces\IUserMediaRepository.cs" />
     <Compile Include="Interfaces\IUserRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repositories\MediaRepository.cs" />
-    <Compile Include="Repositories\UserMediaRepository.cs" />
+    <Compile Include="Repositories\MoviesRepository.cs" />
+    <Compile Include="Repositories\UserMoviesRepository.cs" />
     <Compile Include="Repositories\UserRepository.cs" />
     <Compile Include="SceneItContext.cs" />
     <Compile Include="Entities\User.cs" />
-    <Compile Include="Entities\UserMedia.cs" />
+    <Compile Include="Entities\UserMovies.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -8,7 +8,7 @@ namespace SceneIt.DAL.Entities
     {        
         public User()
         {
-            UserMedia = new HashSet<UserMedia>();
+            UserMovies = new HashSet<UserMovies>();
         }
         
         public int UserId { get; set; }
@@ -17,7 +17,7 @@ namespace SceneIt.DAL.Entities
         [StringLength(50)]
         public string Name { get; set; }
                 
-        public virtual ICollection<UserMedia> UserMedia { get; set; }
+        public virtual ICollection<UserMovies> UserMovies { get; set; }
 
         public override int GetPrimaryKey()
         {

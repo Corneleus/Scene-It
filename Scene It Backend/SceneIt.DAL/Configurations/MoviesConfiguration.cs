@@ -3,12 +3,12 @@ using System.Data.Entity.ModelConfiguration;
 
 namespace SceneIt.DAL.Configurations
 {
-    public class UserConfiguration : EntityTypeConfiguration<User>
+    public class MoviesConfiguration : EntityTypeConfiguration<Movies>
     {
-        public UserConfiguration()
+        public MoviesConfiguration()
         {
             this.HasMany(e => e.UserMovies)
-                .WithRequired(e => e.User)
+                .WithRequired(e => e.Movies)
                 .WillCascadeOnDelete(false);
         }
     }
