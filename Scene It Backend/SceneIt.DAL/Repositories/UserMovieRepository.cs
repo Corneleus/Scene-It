@@ -4,9 +4,9 @@ using SceneIt.DAL.Interfaces;
 
 namespace SceneIt.DAL.Repositories
 {
-    public class UserMoviesRepository : BaseRepository<UserMovies>, IUserMoviesRepository
+    public class UserMovieRepository : BaseRepository<UserMovie>, IUserMovieRepository
     {
-        public UserMoviesRepository(IDatabaseFactory databaseFactory)
+        public UserMovieRepository(IDatabaseFactory databaseFactory)
             : base(databaseFactory)
         {
         }

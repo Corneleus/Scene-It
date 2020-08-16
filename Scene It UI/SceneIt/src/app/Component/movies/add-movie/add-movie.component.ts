@@ -14,6 +14,7 @@ export class AddMovieComponent implements OnInit {
   searchString: string;
   closeResult = '';
 
+
   constructor(private modalService: NgbModal, private movieService: MovieService) { }
 
   ngOnInit(): void {

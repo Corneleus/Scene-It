@@ -3,9 +3,9 @@ using SceneIt.DAL.Infrastructure;
 using SceneIt.DAL.Interfaces;
 namespace SceneIt.DAL.Repositories
 {
-    public class MoviesRepository : BaseRepository<Movies>, IMoviesRepository
+    public class MovieRepository : BaseRepository<Movie>, IMovieRepository
     {
-        public MoviesRepository(IDatabaseFactory databaseFactory)
+        public MovieRepository(IDatabaseFactory databaseFactory)
             : base(databaseFactory)
         {                
         }

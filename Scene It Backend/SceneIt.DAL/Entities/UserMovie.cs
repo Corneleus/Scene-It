@@ -5,13 +5,13 @@ namespace SceneIt.DAL.Entities
     using System.ComponentModel.DataAnnotations.Schema;
 
     [Table("UserMovies")]
-    public partial class UserMovies : BaseEntity
+    public partial class UserMovie : BaseEntity
     {
-        public int UserMoviesId { get; set; }
+        public int UserMovieId { get; set; }
 
         public int UserId { get; set; }
 
-        public int MoviesId { get; set; }
+        public int MovieId { get; set; }
 
         public bool Owned { get; set; }
 
@@ -22,13 +22,13 @@ namespace SceneIt.DAL.Entities
         [StringLength(255)]
         public string RecommendNotes { get; set; }
 
-        public virtual Movies Movies { get; set; }
+        public virtual Movie Movie { get; set; }
 
         public virtual User User { get; set; }
 
         public override int GetPrimaryKey()
         {
-            return UserMoviesId;
+            return UserMovieId;
         }
     }
 }

@@ -50,26 +50,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Configurations\MoviesConfiguration.cs" />
+    <Compile Include="Configurations\MovieConfiguration.cs" />
     <Compile Include="Configurations\UserConfiguration.cs" />
-    <Compile Include="Configurations\UserMoviesConfiguration.cs" />
-    <Compile Include="Entities\Movies.cs" />
+    <Compile Include="Configurations\UserMovieConfiguration.cs" />
+    <Compile Include="Entities\Movie.cs" />
     <Compile Include="Infrastructure\BaseEntity.cs" />
     <Compile Include="Infrastructure\BaseRepository.cs" />
     <Compile Include="Infrastructure\DatabaseFactory.cs" />
     <Compile Include="Interfaces\IDatabaseFactory.cs" />
     <Compile Include="Interfaces\IEntity.cs" />
-    <Compile Include="Interfaces\IMediaRepository.cs" />
+    <Compile Include="Interfaces\IMovieRepository.cs" />
     <Compile Include="Interfaces\IRepository.cs" />
-    <Compile Include="Interfaces\IUserMediaRepository.cs" />
+    <Compile Include="Interfaces\IUserMovieRepository.cs" />
     <Compile Include="Interfaces\IUserRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repositories\MoviesRepository.cs" />
-    <Compile Include="Repositories\UserMoviesRepository.cs" />
+    <Compile Include="Repositories\MovieRepository.cs" />
+    <Compile Include="Repositories\UserMovieRepository.cs" />
     <Compile Include="Repositories\UserRepository.cs" />
     <Compile Include="SceneItContext.cs" />
     <Compile Include="Entities\User.cs" />
-    <Compile Include="Entities\UserMovies.cs" />
+    <Compile Include="Entities\UserMovie.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

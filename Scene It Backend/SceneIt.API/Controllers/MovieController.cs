@@ -8,41 +8,41 @@ using System.Web.Http;
 namespace SceneIt.API.Controllers
 {
     [RoutePrefix("api/movies")]
-    public class MoviesController : ApiController
+    public class MovieController : ApiController
     {
-        private readonly IMoviesService moviesService;
+        private readonly IMovieService movieService;
 
-        public MoviesController()
+        public MovieController()
         {
-            this.moviesService = new MoviesService();
+            this.movieService = new MovieService();
         }
         
         [Route("")]
         [HttpGet]
-        public List<Movies> GetAll()
+        public List<Movie> GetAll()
         {
             try
             {
-                return this.moviesService.GetAll();
+                return this.movieService.GetAll();
             }
             catch (Exception)
             {
-                return new List<Movies>();
+                return new List<Movie>();
                 
             }           
         }
 
         [Route("/(id:int)")]
         [HttpGet]
-        public Movies Get(int id)
+        public Movie Get(int id)
         {
             try
             {
-                return this.moviesService.Get(id);
+                return this.movieService.Get(id);
             }
             catch (Exception)
             {
-                return default(Movies);
+                return default(Movie);
             }
             
         }

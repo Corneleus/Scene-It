@@ -2,7 +2,7 @@
 
 namespace SceneIt.DAL.Interfaces
 {
-    public interface IUserMoviesRepository : IRepository<UserMovies>
+    public interface IMovieRepository : IRepository<Movie>
     {
     }
 }

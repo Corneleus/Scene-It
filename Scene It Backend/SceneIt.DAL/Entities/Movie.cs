@@ -6,11 +6,11 @@ namespace SceneIt.DAL.Entities
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     // todo , seperate the types of movies into its own entity and table in the database IE Movies, Episodic Movies, 
-    public partial class Movies: BaseEntity
+    public partial class Movie: BaseEntity
     {        
-        public Movies()
+        public Movie()
         {
-            UserMovies = new HashSet<UserMovies>();
+            UserMovies = new HashSet<UserMovie>();
         }
 
         [Key]
@@ -103,7 +103,7 @@ namespace SceneIt.DAL.Entities
         [StringLength(255)]
         public string Production { get; set; }
 
-        public virtual ICollection<UserMovies> UserMovies { get; set; }
+        public virtual ICollection<UserMovie> UserMovies { get; set; }
 
         public override int GetPrimaryKey()
         {

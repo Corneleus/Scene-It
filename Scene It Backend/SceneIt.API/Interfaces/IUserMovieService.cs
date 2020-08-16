@@ -3,10 +3,9 @@ using System.Collections.Generic;
 
 namespace SceneIt.API.Interfaces
 {
-    public interface IMoviesService
+    public interface IUserMovieService
     {
-        List<Movies> GetAll();
-        Movies Get(int id);
-       
+        List<UserMovie> GetAll();
+        UserMovie Get(int id);
     }
 }
