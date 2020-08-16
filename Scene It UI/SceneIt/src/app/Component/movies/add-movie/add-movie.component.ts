@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { MovieService } from 'src/app/services/movie.service';
 import { Movie } from 'src/app/models/movie';
+
 
 @Component({
   selector: 'app-add-movie',
@@ -9,6 +10,7 @@ import { Movie } from 'src/app/models/movie';
   styleUrls: ['./add-movie.component.scss']
 })
 export class AddMovieComponent implements OnInit {
+  @Output() refreshTable = new EventEmitter();
   movies: Movie[] = [];
   selectedMovie: Movie;
   searchString: string;
@@ -36,6 +38,7 @@ export class AddMovieComponent implements OnInit {
     this.movieService.getOmdbMovieById(this.selectedMovie.ImdbId).subscribe(movie => {
       this.movieService.addMovie(movie).subscribe(data => {
         if (data.length > 0) {
+          this.refreshTable.emit();
           this.modalService.dismissAll();
         }
       }, error => {

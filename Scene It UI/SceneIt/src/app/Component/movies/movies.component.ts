@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Movie } from 'src/app/models/movie';
+import { MovieService } from 'src/app/services/movie.service';
 
 @Component({
   selector: 'app-movies',
@@ -7,11 +9,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MoviesComponent implements OnInit {
 
-  showCreateForm: Boolean = false;
+  movies: Movie[] = [];
 
-  constructor() { }
+  constructor(private movieService: MovieService) { }
 
   ngOnInit(): void {
+    this.getAllMovies();
+  }
+
+  getAllMovies(){
+    this.movieService.getMovies().subscribe(data => { 
+      this.movies=data;
+    }, error => {
+      //later dealing with error
+    });
+  }
+
+  refreshTable(){
+    this.getAllMovies();
   }
 
 }

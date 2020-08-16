@@ -8,7 +8,7 @@ namespace SceneIt.DAL.Configurations
         public MovieConfiguration()
         {
             this.HasMany(e => e.UserMovies)
-                .WithRequired(e => e.Movies)
+                .WithRequired(e => e.Movie)
                 .WillCascadeOnDelete(false);
         }
     }
