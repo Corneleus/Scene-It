@@ -4,9 +4,12 @@ using SceneIt.DAL.Entities;
 using System;
 using System.Collections.Generic;
 using System.Web.Http;
+using System.Web.Http.Cors;
+
 namespace SceneIt.API.Controllers
 {
     [RoutePrefix("api/usermovies")]
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class UserMovieController : ApiController
     {
         private readonly IUserMovieService userMovieService;
@@ -16,8 +19,8 @@ namespace SceneIt.API.Controllers
             this.userMovieService = new UserMovieService();
         }
 
-        [Route("")]
         [HttpGet]
+        [Route("")]
         public List<UserMovie> GetAll()
         {
             try
@@ -31,8 +34,8 @@ namespace SceneIt.API.Controllers
             }
         }
 
-        [Route("/(id:int)")]
         [HttpGet]
+        [Route("(id:int)")]
         public UserMovie Get(int id)
         {
             try
