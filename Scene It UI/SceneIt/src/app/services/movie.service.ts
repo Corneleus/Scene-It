@@ -35,14 +35,14 @@ export class MovieService {
   }
 
   getOmdbMovieById(id: string): Observable<Movie> {
-    return this.http.get(`http://www.omdbapi.com/?apikey=${this.apiKey}&s=${id}`).pipe(map(x => {
+    return this.http.get(`http://www.omdbapi.com/?apikey=${this.apiKey}&i=${id}`).pipe(map(x => {
       return this.convertJsonToMovie(x);
     }));
   }
 
 
   private convertJsonToMovie(obj: object): Movie {
-    let movie: Movie = new Movie(0, obj['Title'], obj['Year'], obj['Rated'], obj['Released'], obj['Runtime'], obj['Genre'], obj['Director'], obj['Writer'], obj['Actors'], obj['Plot'], 
+    let movie: Movie = new Movie(0, obj['Title'], obj['Year'], obj['Rated'], new Date(obj['Released']), obj['Runtime'], obj['Genre'], obj['Director'], obj['Writer'], obj['Actors'], obj['Plot'], 
     obj['Language'], obj['Country'], obj['Awards'], obj['Poster'], obj['Metascore'], obj['imdbRating'], obj['imdbVotes'], obj['imdbID'], obj['Type'], obj['Dvd'], obj['BoxOffice'], 
     obj['Production']);    
     return movie;

@@ -35,7 +35,9 @@ export class AddMovieComponent implements OnInit {
   }
 
   addMovie() {
+    console.log(this.selectedMovie.ImdbId)
     this.movieService.getOmdbMovieById(this.selectedMovie.ImdbId).subscribe(movie => {
+      console.log(movie);
       this.movieService.addMovie(movie).subscribe(data => {
         if (data.length > 0) {
           this.refreshTable.emit();
@@ -53,6 +55,7 @@ export class AddMovieComponent implements OnInit {
   searchOmdb(search: string): void {
     this.movieService.searchOmdbApi(search).subscribe(data => {
       this.movies = data;
+      console.log(data);
     }, error => {
       console.log(error);
     });
