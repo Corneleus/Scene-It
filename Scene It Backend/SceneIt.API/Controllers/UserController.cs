@@ -4,10 +4,12 @@ using SceneIt.DAL.Entities;
 using System;
 using System.Collections.Generic;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace SceneIt.API.Controllers
 {
     [RoutePrefix("api/user")]
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class UserController : ApiController
     {
         private readonly IUserService userService;
@@ -17,8 +19,8 @@ namespace SceneIt.API.Controllers
             this.userService = new UserService();
         }
 
-        [Route("")]
         [HttpGet]
+        [Route("")]
         public List<User> GetAll()
         {
             try
@@ -32,8 +34,8 @@ namespace SceneIt.API.Controllers
             }
         }
 
-        [Route("/(id:int)")]
         [HttpGet]
+        [Route("(id:int)")]
         public User Get(int id)
         {
             try

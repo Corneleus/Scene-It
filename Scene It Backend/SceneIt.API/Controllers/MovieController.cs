@@ -4,10 +4,12 @@ using SceneIt.DAL.Entities;
 using System;
 using System.Collections.Generic;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace SceneIt.API.Controllers
 {
     [RoutePrefix("api/movies")]
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class MovieController : ApiController
     {
         private readonly IMovieService movieService;
@@ -16,9 +18,9 @@ namespace SceneIt.API.Controllers
         {
             this.movieService = new MovieService();
         }
-        
-        [Route("")]
+
         [HttpGet]
+        [Route("")]
         public IHttpActionResult GetAll()
         {
             try
@@ -31,8 +33,8 @@ namespace SceneIt.API.Controllers
             }           
         }
 
-        [Route("/(id:int)")]
         [HttpGet]
+        [Route("(id:int)")]
         public IHttpActionResult Get(int id)
         {
             try
@@ -46,8 +48,8 @@ namespace SceneIt.API.Controllers
             
         }
 
-        [Route("/add")]
         [HttpPost]
+        [Route("add")]
         public IHttpActionResult Add(Movie movie)
         {
             try
