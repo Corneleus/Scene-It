@@ -9,7 +9,6 @@ using System.Web.Http.Cors;
 namespace SceneIt.API.Controllers
 {
     [RoutePrefix("api/movies")]
-    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class MovieController : ApiController
     {
         private readonly IMovieService movieService;

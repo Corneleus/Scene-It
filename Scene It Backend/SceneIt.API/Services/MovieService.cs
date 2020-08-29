@@ -35,7 +35,10 @@ namespace SceneIt.API.Services
 
         public void Add(Movie movie)
         {
-            this.movieRepository.Add(movie);
+            if(!this.movieRepository.GetMany(x => x.ImdbId == movie.ImdbId).Any())
+            {
+                this.movieRepository.Add(movie);
+            }
         }
     }
 }

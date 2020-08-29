@@ -67,7 +67,8 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "SceneIt:build"
+            "browserTarget": "SceneIt:build",
+            "proxyConfig": "src/proxy.conf.json"
           },
           "configurations": {
             "production": {

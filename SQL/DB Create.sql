@@ -1,5 +1,4 @@
 create database [SceneIt]
-
 go
 
 use [SceneIt]
@@ -39,7 +38,7 @@ create table [Movies](
 go
 
 create table UserMovies(
-	UserMoiveId int identity(1,1) Primary key,
+	UserMovieId int identity(1,1) Primary key,
 	UserId int not null foreign key references Users(UserId),
 	MovieId int not null foreign key references Movies(MovieId),
 	Owned bit not null,

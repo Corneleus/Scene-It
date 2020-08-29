@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Movie } from '../models/movie';
 import { Observable, ObservableLike } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -10,18 +10,19 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class MovieService {
+  headers: HttpHeaders = new HttpHeaders();
+  apiKey: string = "988bc720";
 
-  apiKey: string = "988bc720"
-  
-
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+    this.headers.append('Content-Type', 'application/json');
+  }
 
   getMovies(): Observable<Movie[]> {
-    return this.http.get(`${environment.api}api/movies`).pipe(map(x => x as Movie[]));
+    return this.http.get<Movie[]>(`${environment.api}api/movies`, { headers: this.headers });
   }
   // this is the same as the getmovies however dosnt require use of the pipe method called type transformation
   addMovie(movie: Movie): Observable<string> {
-    return this.http.post<string>(`${environment.api}api/movies/add`, movie);
+    return this.http.post<string>(`${environment.api}api/movies/add`, movie, { headers: this.headers });
   }
 
   searchOmdbApi(query: string): Observable<Movie[]> {
