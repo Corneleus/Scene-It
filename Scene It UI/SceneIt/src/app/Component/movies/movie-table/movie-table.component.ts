@@ -5,7 +5,6 @@ import { MovieService } from 'src/app/services/movie.service';
 @Component({
   selector: 'app-movie-table',
   templateUrl: './movie-table.component.html',
-  styleUrls: ['./movie-table.component.scss']
 })
 export class MovieTableComponent implements OnInit {
 

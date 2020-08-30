@@ -7,7 +7,6 @@ import { Movie } from 'src/app/models/movie';
 @Component({
   selector: 'app-add-movie',
   templateUrl: './add-movie.component.html',
-  styleUrls: ['./add-movie.component.scss']
 })
 export class AddMovieComponent implements OnInit {
   @Output() refreshTable = new EventEmitter();

@@ -1,7 +1,8 @@
 <table class="table table-dark">
   <thead>
     <tr>
-      <th>Name:</th>
+      <th>Poster:</th>
+      <th>Title:</th>
       <th>Genre:</th>
       <th>Year:</th>
       <th>Rated:</th>
@@ -10,6 +11,7 @@
 
   <tbody>
     <tr *ngFor="let movie of movies">
+      <td><img class="moviePoster" [src]="movie.Poster != 'N/A' ? movie.Poster : '/assets/images/not-found-image.jpg'" [alt]="movie.Title"></td>
       <td>{{movie.Title}}</td>
       <td>{{movie.Genre}}</td>
       <td>{{movie.Year}}</td>
