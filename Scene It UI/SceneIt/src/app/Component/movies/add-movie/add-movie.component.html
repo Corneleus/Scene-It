@@ -1,13 +1,13 @@
 <button class="btn btn-lg btn-outline-primary bg-dark" (click)="open(addMovieModal)">Add Movie</button>
 
 <ng-template #addMovieModal let-modal>
-    <div class="modal-header">
+    <div class="modal-header text-primary bg-dark">
         <h4 class="modal-title" id="modal-add-movie-title">Add Movie</h4>
         <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
             <span aria-hidden="true">&times;</span>
         </button>
     </div>
-    <div class="modal-body">
+    <div class="modal-body bg-dark">
         <div class="row">
             <div class="input-group">
                 <input type="text" class="form-control" [(ngModel)]="searchString" name="searchString"
@@ -28,7 +28,8 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let movie of movies" (click)="selectMovie(movie)" [ngClass]="{'selectedMovie': movie == selectedMovie}">
+                    <!-- why cant i change the css for selected movie and it stick? -->
+                    <tr *ngFor="let movie of movies" (click)="selectMovie(movie)" [ngClass]="{'highlightSelected': movie == selectedMovie}">
                         <td><img class="moviePoster" [src]="movie.Poster != 'N/A' ? movie.Poster : '/assets/images/not-found-image.jpg'" [alt]="movie.Title"></td>
                         <td>{{movie.Title}}</td>
                         <td>{{movie.Year}}</td>
@@ -37,7 +38,7 @@
             </table>
         </div>
     </div>
-    <div class="modal-footer">
-        <button type="button" class="btn btn-outline-dark" (click)="addMovie()">Save</button>
+    <div class="modal-footer bg-dark">
+        <button type="button" class="btn btn-light" (click)="addMovie()">Save</button>
     </div>
 </ng-template>
