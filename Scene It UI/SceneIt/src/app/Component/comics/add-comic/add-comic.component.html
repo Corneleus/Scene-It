@@ -1,0 +1,40 @@
+<button class="btn btn-lg btn-outline-primary bg-dark" (click)="open(addComicModal)">Add Comic</button>
+
+<ng-template #addComicModal let-modal>
+    <div class="modal-header text-primary bg-dark">
+        <h4 class="modal-title" id="modal-add-comic">Add Comic</h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body bg-dark">
+        <div class="row">
+            <div class="input-group">
+                <!-- <input type="text" class="form-control" [(ngModel)]="searchString" name="searchString" 
+                    placeholder="Enter Movie to search for..."-->
+                <div class="input-group-append">
+                    <!-- <button type="button" class="btn btn-success" (click)="searchOmdb(searchString)">Search</button> -->
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <table class="table table-dark">
+                <thead>
+                    <tr>
+                      There is going to be a form here for inputing comics and it will have to have input validation that will then be transfered to novels as well
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- <tr *ngFor="let movie of movies" (click)="selectMovie(movie)" [ngClass]="{'highlightSelected': movie == selectedMovie}">
+                        <td><img class="moviePoster" [src]="movie.Poster != 'N/A' ? movie.Poster : '/assets/images/not-found-image.jpg'" [alt]="movie.Title"></td>
+                        <td>{{movie.Title}}</td>
+                        <td>{{movie.Year}}</td>
+                    </tr>  -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="modal-footer bg-dark">
+        <button type="button" class="btn btn-light" (click)="addComic()">Save</button>
+    </div>
+</ng-template>

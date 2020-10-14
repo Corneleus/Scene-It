@@ -31,6 +31,7 @@ export class AddMovieComponent implements OnInit {
 
   selectMovie(movie: any) {
     this.selectedMovie = movie;
+    console.log(movie);
   }
 
   addMovie() {

@@ -21,6 +21,8 @@ import { MovieService } from './services/movie.service';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { GamesComponent } from './Component/games/games.component';
+import { AddComicComponent } from './Component/comics/add-comic/add-comic.component';
+
 
 @NgModule({
   declarations: [
@@ -38,7 +40,8 @@ import { GamesComponent } from './Component/games/games.component';
     ComicsComponent,
     NovelsComponent,
     SeriesComponent,
-    GamesComponent
+    GamesComponent,
+    AddComicComponent,
   ],
   imports: [
     BrowserModule,
