@@ -20,7 +20,7 @@ export class AddComicComponent implements OnInit {
   }
 
   open(content) {
-    this.modalService.open(content, { ariaLabelledBy: 'modal-add-comic-title', size: 'xl', scrollable: false}).result.then((result) => {
+    this.modalService.open(content, { ariaLabelledBy: 'modal-add-comic-title', size: 'xl', scrollable: true}).result.then((result) => {
       this.closeResult = `Closed with: ${result}`;
     }, (reason) => {
       this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
