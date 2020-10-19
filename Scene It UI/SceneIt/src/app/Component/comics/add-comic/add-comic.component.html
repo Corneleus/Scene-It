@@ -8,34 +8,44 @@
         </button>
     </div>
     <div class="modal-body bg-dark">        
-        <div class="row whiteText modal-size"> 
-            <!-- cant make the modal larger and cant get the text box to there for more then one of the labels -->
-            <div class="form-control"> 
-                <label for="title">Title</label>
-                <input  type="text" class="form-control input-group-append" id="title">
+        <div class="modal-size"> 
+            <div> 
+                <label class="row whiteText" for="title">Please input information on the Comic you would like to add.</label>
                 <hr>
-                <label class="row whiteText"  for="altTitle">Alt Title</label>
-                <input type="text" class="form-control" id="altTitle">
+                <label class="row whiteText" for="title">Title</label>
+                <input type="text" class="form-control input-group-append" id="title">
                 <hr>
-                <label for="author">Author</label>
+                <!-- this should be a section you can add more then one title to as in a button that duplicates the alt title section 
+                and allows you to add alt title 1 . alt title 2 ect ect -->
+                <label class="row whiteText" for="altTitle">Alt Title</label>
+                <input type="text" class="form-control" id="altTitle"> 
+                <hr>
+                <label class="row whiteText" for="author">Author</label>
                 <input type="text" class="form-control" id="author">
-            </div>
-            <!-- <div class="form-control">
-                <label for="title">Alt Title</label>
-                <input type="text" class="form-control" id="altTitle">
-            </div>
-            <div class="form-control">
-                <label for="title">Author</label>
-                <input type="text" class="form-control" id="author">
-            </div>
-            <div class="form-control">
-                <label for="title">Artist</label>
+                <hr>
+                <label class="row whiteText" for="title">Artist</label>
                 <input type="text" class="form-control" id="artist">
+                <hr>
+                <label class="row whiteText" for="author">Original Language</label>
+                <input type="text" class="form-control" id="originalLanguage">
+                <hr>
+                <!--  this should be a section that has checkboxes or such that lets you add more then one genre by selecting the ones from a
+                list of them -->
+                <label class="row whiteText" for="author">Genre</label>
+                <input type="text" class="form-control" id="genres">
+                <hr>
+                <label class="row whiteText" for="author">Status</label>
+                <input type="text" class="form-control" id="author">
+                <hr>
+                <label class="row whiteText" for="author">Latest Release</label>
+                <input type="text" class="form-control" id="latestRelease">
+                <hr>
+                <label class="row whiteText" for="author">Current Chapter</label>
+                <input type="text" class="form-control" id="currentChapter">
+                <hr>
+                <label class="row whiteText" for="author">Description</label>
+                <input type="text" class="form-control" id="description">
             </div>
-            <div class="form-control">
-                <label for="title">Origonal Language</label>
-                <input type="text" class="form-control" id="origonalLanguage">
-            </div> -->
         </div>
     </div>
     <div class="modal-footer bg-dark">
