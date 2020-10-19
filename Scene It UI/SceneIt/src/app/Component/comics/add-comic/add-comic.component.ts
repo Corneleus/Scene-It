@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
+import { Comic } from 'src/app/models/comic';
 
 @Component({
   selector: 'app-add-comic',
@@ -7,6 +8,7 @@ import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 })
 export class AddComicComponent implements OnInit {
   closeResult: string = '';
+  comics: Comic[] = [];
 
   constructor(private modalService: NgbModal) { }
 
@@ -18,7 +20,7 @@ export class AddComicComponent implements OnInit {
   }
 
   open(content) {
-    this.modalService.open(content, { ariaLabelledBy: 'modal-add-movie-title', size: 'xl', scrollable: true }).result.then((result) => {
+    this.modalService.open(content, { ariaLabelledBy: 'modal-add-comic-title', size: 'xl', scrollable: false}).result.then((result) => {
       this.closeResult = `Closed with: ${result}`;
     }, (reason) => {
       this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;

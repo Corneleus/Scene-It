@@ -1,5 +1,3 @@
-import { StringifyOptions } from 'querystring';
-
 export class Movie {
     MovieId: number;
     Title: string;

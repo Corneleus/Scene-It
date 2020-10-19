@@ -33,3 +33,12 @@
     flex-grow: 0;
     background: #eee;
   }
+
+  .whiteText{
+    color:white
+  }
+
+  .modal-size {
+    width: 80%;
+    height: 80%;
+    }
