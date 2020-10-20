@@ -24,6 +24,8 @@ import { GamesComponent } from './Component/games/games.component';
 import { AddComicComponent } from './Component/comics/add-comic/add-comic.component';
 
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -48,7 +50,10 @@ import { AddComicComponent } from './Component/comics/add-comic/add-comic.compon
     AppRoutingModule,
     FormsModule,
     NgbModule,
-    HttpClientModule
+    HttpClientModule,
+    
+
+
   ],
   providers: [MovieService],
   bootstrap: [AppComponent]

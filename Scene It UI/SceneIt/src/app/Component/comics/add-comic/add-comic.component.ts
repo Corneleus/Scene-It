@@ -1,6 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { Comic } from 'src/app/models/comic';
+
+
 
 @Component({
   selector: 'app-add-comic',
@@ -8,15 +11,22 @@ import { Comic } from 'src/app/models/comic';
 })
 export class AddComicComponent implements OnInit {
   closeResult: string = '';
+  
   comics: Comic[] = [];
 
+  title: string;
+
+
+  //status: ['ongoing','hiatus','completed','canceled'];
+  
+  
   constructor(private modalService: NgbModal) { }
 
   ngOnInit(): void {
   }
 
-  addComic(){
-
+  addComic(form:NgForm){
+    console.log(form);
   }
 
   open(content) {

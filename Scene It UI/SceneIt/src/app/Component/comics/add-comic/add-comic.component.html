@@ -7,49 +7,63 @@
             <span aria-hidden="true">&times;</span>
         </button>
     </div>
-    <div class="modal-body bg-dark">        
-        <div class="modal-size"> 
-            <div> 
-                <label class="row whiteText" for="title">Please input information on the Comic you would like to add.</label>
-                <hr>
-                <label class="row whiteText" for="title">Title</label>
-                <input type="text" class="form-control input-group-append" id="title">
-                <hr>
-                <!-- this should be a section you can add more then one title to as in a button that duplicates the alt title section 
-                and allows you to add alt title 1 . alt title 2 ect ect -->
-                <label class="row whiteText" for="altTitle">Alt Title</label>
-                <input type="text" class="form-control" id="altTitle"> 
-                <hr>
-                <label class="row whiteText" for="author">Author</label>
-                <input type="text" class="form-control" id="author">
-                <hr>
-                <label class="row whiteText" for="title">Artist</label>
-                <input type="text" class="form-control" id="artist">
-                <hr>
-                <label class="row whiteText" for="author">Original Language</label>
-                <input type="text" class="form-control" id="originalLanguage">
-                <hr>
-                <!--  this should be a section that has checkboxes or such that lets you add more then one genre by selecting the ones from a
-                list of them -->
-                <label class="row whiteText" for="author">Genre</label>
-                <input type="text" class="form-control" id="genres">
-                <hr>
-                <label class="row whiteText" for="author">Status</label>
-                <input type="text" class="form-control" id="author">
-                <hr>
-                <label class="row whiteText" for="author">Latest Release</label>
-                <input type="text" class="form-control" id="latestRelease">
-                <hr>
-                <label class="row whiteText" for="author">Current Chapter</label>
-                <input type="text" class="form-control" id="currentChapter">
-                <hr>
-                <label class="row whiteText" for="author">Description</label>
-                <input type="text" class="form-control" id="description">
-            </div>
+<!-- form validation? numbers for chapters and latest release. spell check? adding more then one author, artist, genre(might be buttons that add the genre to the list).
+     original lang being a drop down?  -->
+    <div class="modal-body bg-dark">
+        <div class="modal-size">
+            <form (ngSubmit)="addComic(f)" #f="ngForm"> 
+                <!-- onSubmit will need an f in its method call -->
+                <div id="form-data">
+                    <div class="form-group">
+                        <label class="row whiteText" for="title">Please input information on the Comic you would like to add.</label>
+                        <hr>
+                        <label class="row whiteText" for="title">Title</label>
+                        <input type="text" id="title" class="form-control input-group-append" ngModel name="title">
+                        <hr>
+                        <!-- this should be a section you can add more then one title to as in a button that duplicates the alt title section 
+                        and allows you to add alt title 1 . alt title 2 ect ect -->
+                        <label class="row whiteText" for="altTitle">Alt Title</label>
+                        <input type="text" id="altTitle" class="form-control" ngModel name="altTitle">
+                        <hr>
+                        <label class="row whiteText" for="author">Author</label>
+                        <input type="text" id="author" class="form-control" ngModel name="author">
+                        <hr>
+                        <label class="row whiteText" for="artist">Artist</label>
+                        <input type="text" id="artist" class="form-control" ngModel name="artist">
+                        <hr>
+                        <label class="row whiteText" for="origonalLanguage">Original Language</label>
+                        <input type="text" id="originalLanguage" class="form-control" ngModel name="originalLanguage">
+                        <hr>
+                        <!--  this should be a section that has checkboxes or such that lets you add more then one genre by selecting the ones from a
+                        list of them -->
+                        <label class="row whiteText" for="genre">Genre</label>
+                        <input type="text" id="genre" class="form-control" ngModel name="genre">
+                        <hr>
+                        <!-- drop down for status: ongoing, cancelled, hiatus, completed  have tried to use 4 seperate drop downs and they all dont work what am
+                        i doing wrong?-->
+                        <label class="row whiteText" for="status">Status</label>
+                        <select name="status" id="status" class="form-control" ngModel>
+                            <option value="ongoing">Ongoing</option>
+                            <option value="cancelled">Cancelled</option>
+                            <option value="hiatus">Hiatus</option>
+                            <option value="completed">Completed</option>
+                        </select>
+                        <hr>
+                        <label class="row whiteText" for="latestRelease">Latest Release</label>
+                        <input type="text" id="latestRelease" class="form-control" ngModel name="latestRelease">
+                        <hr>
+                        <label class="row whiteText" for="currentChapter">Current Chapter</label>
+                        <input type="text" id="currentChapter" class="form-control" ngModel name="currentChapter">
+                        <hr>
+                        <label class="row whiteText" for="description">Description</label>
+                        <input type="text" id="description" class="form-control" ngModel name="description">
+                    </div>
+                </div>
+                <div class="modal-footer bg-dark">
+                    <button type="submit" class="btn btn-light">Save</button>
+                </div>
+            </form>
         </div>
-    </div>
-    <div class="modal-footer bg-dark">
-        <button type="button" class="btn btn-light" (click)="addComic()">Save</button>
     </div>
 </ng-template>
 

@@ -1,4 +1,4 @@
-import { generate } from 'rxjs';
+
 
 export class Comic{
     ComicId: number;

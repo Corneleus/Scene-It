@@ -4,6 +4,7 @@ import { MovieService } from 'src/app/services/movie.service';
 import { Movie } from 'src/app/models/movie';
 
 
+
 @Component({
   selector: 'app-add-movie',
   templateUrl: './add-movie.component.html',
