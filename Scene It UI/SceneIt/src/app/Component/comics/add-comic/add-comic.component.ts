@@ -1,36 +1,32 @@
-import { Component, ElementRef, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, NO_ERRORS_SCHEMA, NgModule } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { Comic } from 'src/app/models/comic';
-
+import { COMMA, ENTER } from '@angular/cdk/keycodes';
+import { MatChipInputEvent } from '@angular/material/chips';
 
 
 @Component({
   selector: 'app-add-comic',
   templateUrl: './add-comic.component.html'
 })
+
+
 export class AddComicComponent implements OnInit {
   closeResult: string = '';
-  
   comics: Comic[] = [];
-
   title: string;
 
-
-  //status: ['ongoing','hiatus','completed','canceled'];
-  
-  
   constructor(private modalService: NgbModal) { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { }
 
-  addComic(form:NgForm){
+  addComic(form: NgForm) {
     console.log(form);
   }
 
   open(content) {
-    this.modalService.open(content, { ariaLabelledBy: 'modal-add-comic-title', size: 'xl', scrollable: true}).result.then((result) => {
+    this.modalService.open(content, { ariaLabelledBy: 'modal-add-comic-title', size: 'xl', scrollable: true }).result.then((result) => {
       this.closeResult = `Closed with: ${result}`;
     }, (reason) => {
       this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
@@ -46,5 +42,6 @@ export class AddComicComponent implements OnInit {
       return `with: ${reason}`;
     }
   }
-
 }
+
+

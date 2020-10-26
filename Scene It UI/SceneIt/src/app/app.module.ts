@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, NO_ERRORS_SCHEMA, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -18,7 +18,7 @@ import { NovelsComponent } from './Component/novels/novels.component';
 import { SeriesComponent } from './Component/series/series.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MovieService } from './services/movie.service';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule, ɵNgSelectMultipleOption } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { GamesComponent } from './Component/games/games.component';
 import { AddComicComponent } from './Component/comics/add-comic/add-comic.component';
@@ -44,6 +44,7 @@ import { AddComicComponent } from './Component/comics/add-comic/add-comic.compon
     SeriesComponent,
     GamesComponent,
     AddComicComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -51,11 +52,13 @@ import { AddComicComponent } from './Component/comics/add-comic/add-comic.compon
     FormsModule,
     NgbModule,
     HttpClientModule,
-    
+
+
 
 
   ],
   providers: [MovieService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
 })
 export class AppModule { }

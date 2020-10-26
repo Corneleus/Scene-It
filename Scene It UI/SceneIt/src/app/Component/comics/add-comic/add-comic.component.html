@@ -7,56 +7,70 @@
             <span aria-hidden="true">&times;</span>
         </button>
     </div>
-<!-- form validation? numbers for chapters and latest release. spell check? adding more then one author, artist, genre(might be buttons that add the genre to the list).
+    <!-- form validation? numbers for chapters and latest release. spell check? adding more then one author, artist, genre(might be buttons that add the genre to the list).
      original lang being a drop down?  -->
     <div class="modal-body bg-dark">
         <div class="modal-size">
-            <form (ngSubmit)="addComic(f)" #f="ngForm"> 
-                <!-- onSubmit will need an f in its method call -->
+            <form (ngSubmit)="addComic(f)" #f="ngForm">
                 <div id="form-data">
-                    <div class="form-group">
-                        <label class="row whiteText" for="title">Please input information on the Comic you would like to add.</label>
-                        <hr>
-                        <label class="row whiteText" for="title">Title</label>
-                        <input type="text" id="title" class="form-control input-group-append" ngModel name="title">
-                        <hr>
-                        <!-- this should be a section you can add more then one title to as in a button that duplicates the alt title section 
-                        and allows you to add alt title 1 . alt title 2 ect ect -->
-                        <label class="row whiteText" for="altTitle">Alt Title</label>
-                        <input type="text" id="altTitle" class="form-control" ngModel name="altTitle">
-                        <hr>
-                        <label class="row whiteText" for="author">Author</label>
-                        <input type="text" id="author" class="form-control" ngModel name="author">
-                        <hr>
-                        <label class="row whiteText" for="artist">Artist</label>
-                        <input type="text" id="artist" class="form-control" ngModel name="artist">
-                        <hr>
-                        <label class="row whiteText" for="origonalLanguage">Original Language</label>
-                        <input type="text" id="originalLanguage" class="form-control" ngModel name="originalLanguage">
-                        <hr>
-                        <!--  this should be a section that has checkboxes or such that lets you add more then one genre by selecting the ones from a
-                        list of them -->
-                        <label class="row whiteText" for="genre">Genre</label>
-                        <input type="text" id="genre" class="form-control" ngModel name="genre">
-                        <hr>
-                        <!-- drop down for status: ongoing, cancelled, hiatus, completed  have tried to use 4 seperate drop downs and they all dont work what am
-                        i doing wrong?-->
-                        <label class="row whiteText" for="status">Status</label>
-                        <select name="status" id="status" class="form-control" ngModel>
-                            <option value="ongoing">Ongoing</option>
-                            <option value="cancelled">Cancelled</option>
-                            <option value="hiatus">Hiatus</option>
-                            <option value="completed">Completed</option>
-                        </select>
-                        <hr>
-                        <label class="row whiteText" for="latestRelease">Latest Release</label>
-                        <input type="text" id="latestRelease" class="form-control" ngModel name="latestRelease">
-                        <hr>
-                        <label class="row whiteText" for="currentChapter">Current Chapter</label>
-                        <input type="text" id="currentChapter" class="form-control" ngModel name="currentChapter">
-                        <hr>
-                        <label class="row whiteText" for="description">Description</label>
-                        <input type="text" id="description" class="form-control" ngModel name="description">
+                    <p class="text-light">Please input information on the Comic you would like to add.</p>
+                    <div class="column">
+                        <div class="form-group">
+                            <label class="text-light" for="title">Title</label>
+                            <input type="text" id="title" class="form-control input-group-append" ngModel name="title">
+                        </div>
+                        <div class="form-group">
+                            <!-- this should be a section you can add more then one title to as in a button that duplicates the alt title section 
+                            and allows you to add alt title 1 . alt title 2 ect ect -->
+                            <label class="text-light" for="altTitle">Alt Title</label>
+                            <input type="text" id="altTitle" class="form-control" ngModel name="altTitle">
+                        </div>
+                        <div class="form-group">
+                            <label class="text-light" for="author">Author</label>
+                            <input type="text" id="author" class="form-control" ngModel name="author">
+                        </div>
+                        <div class="form-group">
+                            <label class="text-light" for="artist">Artist</label>
+                            <input type="text" id="artist" class="form-control" ngModel name="artist">
+                        </div>
+                        <div class="form-group">
+                            <label class="text-light" for="status">Original Language</label>
+                            <select name="originalLanguage" id="originalLanguage" class="form-control" ngModel>
+                                <option value="english">English</option>
+                                <option value="japanese">Japanese(Manga)</option>
+                                <option value="chinese">Chinese(Manhua)</option>
+                                <option value="korean">Korean(Manhwa)</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="form-group">
+                            <!-- erik suggests using bubble tags a list -->
+                            <label class="text-light" for="genre">Genre</label>
+                            <input type="text" id="genre" class="form-control" ngModel name="genre">
+                        </div>
+                        <div class="form-group">
+                            <label class="text-light" for="status">Status</label>
+                            <select name="status" id="status" class="form-control" ngModel>
+                                <option value="ongoing">Ongoing</option>
+                                <option value="cancelled">Cancelled</option>
+                                <option value="hiatus">Hiatus</option>
+                                <option value="completed">Completed</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="text-light" for="latestRelease">Latest Release</label>
+                            <input type="text" id="latestRelease" class="form-control" ngModel name="latestRelease">
+                        </div>
+                        <div class="form-group">
+                            <label class="text-light" for="currentChapter">Current Chapter</label>
+                            <input type="text" id="currentChapter" class="form-control" ngModel name="currentChapter">
+                        </div>
+                        <div class="form-group">
+                            <label class="text-light" for="description">Description</label>
+                            <textarea id="description" class="form-control" rows="5" ngModel
+                                name="description"></textarea>
+                        </div>
                     </div>
                 </div>
                 <div class="modal-footer bg-dark">
