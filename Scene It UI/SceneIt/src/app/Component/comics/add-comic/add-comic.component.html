@@ -7,8 +7,6 @@
             <span aria-hidden="true">&times;</span>
         </button>
     </div>
-    <!-- form validation? numbers for chapters and latest release. spell check? adding more then one author, artist, genre(might be buttons that add the genre to the list).
-     original lang being a drop down?  -->
     <div class="modal-body bg-dark">
         <div class="modal-size">
             <form (ngSubmit)="addComic(f)" #f="ngForm">
@@ -42,6 +40,14 @@
                             <input type="text" id="artist" class="form-control" ngModel name="artist">
                         </div>
                         <div class="form-group">
+                            <label class="text-light" for="genre">Genre</label>
+                            <ng-select name="genre" [items]="items" bindLabel="name" placeholder="Select Genre" appendTo="body"
+                                multiple="true" [(ngModel)]="selected">
+                            </ng-select>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="form-group">
                             <label class="text-light" for="status">Original Language</label>
                             <select name="originalLanguage" id="originalLanguage" class="form-control" ngModel>
                                 <option value="english">English</option>
@@ -49,14 +55,6 @@
                                 <option value="chinese">Chinese(Manhua)</option>
                                 <option value="korean">Korean(Manhwa)</option>
                             </select>
-                        </div>
-                    </div>
-                    <div class="column">
-                        <div class="form-group">
-                            <!-- erik suggests using bubble tags a list -->
-
-                            <label class="text-light" for="genre">Genre</label>
-                            <input type="text" id="genre" class="form-control" ngModel name="genre">
                         </div>
                         <div class="form-group">
                             <label class="text-light" for="status">Status</label>
@@ -77,7 +75,7 @@
                         </div>
                         <div class="form-group">
                             <label class="text-light" for="description">Description</label>
-                            <textarea id="description" class="form-control" rows="9" ngModel
+                            <textarea id="description" class="form-control" rows="10" ngModel
                                 name="description"></textarea>
                         </div>
                     </div>

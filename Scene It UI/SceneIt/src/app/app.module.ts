@@ -22,6 +22,7 @@ import { FormsModule, ReactiveFormsModule, ɵNgSelectMultipleOption } from '@ang
 import { HttpClientModule } from '@angular/common/http';
 import { GamesComponent } from './Component/games/games.component';
 import { AddComicComponent } from './Component/comics/add-comic/add-comic.component';
+import { NgSelectModule } from '@ng-select/ng-select';
 
 
 
@@ -45,13 +46,16 @@ import { AddComicComponent } from './Component/comics/add-comic/add-comic.compon
     GamesComponent,
     AddComicComponent,
 
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule,
-    NgbModule,
     HttpClientModule,
+    NgbModule,
+    FormsModule,
+    NgSelectModule,
+
 
 
 

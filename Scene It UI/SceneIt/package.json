@@ -24,6 +24,7 @@
     "@angular/router": "~9.1.1",
     "@material/chips": "^0.30.0",
     "@ng-bootstrap/ng-bootstrap": "^6.2.0",
+    "@ng-select/ng-select": "^5.0.8",
     "@types/material__chips": "^1.0.1",
     "angular-chips": "^1.0.11",
     "bootstrap": "^4.5.0",
