@@ -63,5 +63,8 @@
   color: #8A2BE2;
 }
 
-
+.flex > .ng-dropdown-panel-items > div:nth-child(2) {
+  display: flex;
+  flex-wrap: wrap;
+}
 

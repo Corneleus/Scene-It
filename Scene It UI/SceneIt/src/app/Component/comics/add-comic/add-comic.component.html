@@ -17,6 +17,8 @@
                             <label class="text-light" for="title">Title</label>
                             <input type="text" id="title" class="form-control input-group-append" ngModel name="title">
                         </div>
+                        <!-- should placeholder="Optional" be in the base text box? or like a 0 for current chapter and whatnot
+                        should there be pre filled in data for the other text boxes? -->
                         <div class="form-group">
                             <!-- this should be a section you can add more then one title to as in a button that duplicates the alt title section 
                             and allows you to add alt title 1 . alt title 2 ect ect -->
@@ -41,8 +43,8 @@
                         </div>
                         <div class="form-group">
                             <label class="text-light" for="genre">Genre</label>
-                            <ng-select name="genre" [items]="items" bindLabel="name" placeholder="Select Genre" appendTo="body"
-                                multiple="true" [(ngModel)]="selected">
+                            <ng-select class="flex" name="genre" [items]="items" bindLabel="name" placeholder="Select Genre"
+                                appendTo="body" multiple="true" [(ngModel)]="selected" [closeOnSelect]="false">
                             </ng-select>
                         </div>
                     </div>
@@ -50,19 +52,19 @@
                         <div class="form-group">
                             <label class="text-light" for="status">Original Language</label>
                             <select name="originalLanguage" id="originalLanguage" class="form-control" ngModel>
-                                <option value="english">English</option>
-                                <option value="japanese">Japanese(Manga)</option>
-                                <option value="chinese">Chinese(Manhua)</option>
-                                <option value="korean">Korean(Manhwa)</option>
+                                <option value="English">English</option>
+                                <option value="Japanese">Japanese(Manga)</option>
+                                <option value="Chinese">Chinese(Manhua)</option>
+                                <option value="Korean">Korean(Manhwa)</option>
                             </select>
                         </div>
                         <div class="form-group">
                             <label class="text-light" for="status">Status</label>
                             <select name="status" id="status" class="form-control" ngModel>
-                                <option value="ongoing">Ongoing</option>
-                                <option value="cancelled">Cancelled</option>
-                                <option value="hiatus">Hiatus</option>
-                                <option value="completed">Completed</option>
+                                <option value="Ongoing">Ongoing</option>
+                                <option value="Cancelled">Cancelled</option>
+                                <option value="Hiatus">Hiatus</option>
+                                <option value="Completed">Completed</option>
                             </select>
                         </div>
                         <div class="form-group">
