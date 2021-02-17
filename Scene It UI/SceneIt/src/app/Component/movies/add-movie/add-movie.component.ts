@@ -35,7 +35,8 @@ export class AddMovieComponent implements OnInit {
     console.log(movie);
   }
 
-  addMovie() {
+  addMovie() {// this is called in the component which then calls the movieService with getOmdbMovieById to get the id and then addMovie from service
+    // to post the movie
     console.log(this.selectedMovie.ImdbId)
     this.movieService.getOmdbMovieById(this.selectedMovie.ImdbId).subscribe(movie => {
       console.log(movie);
